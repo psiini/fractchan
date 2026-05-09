@@ -1,8 +1,14 @@
 C23456789 ...
        PROGRAM SIERPASCII
-       INTEGER X, Y, N
+       INTEGER X, Y, N, D
        
-       DO 10 Y=0,20
+C     ** USER INPUT **
+      WRITE (*,*) 'ENTER DEPTH:'
+      READ (*,*) D
+C           ***
+       
+C      ** PROGRAM CODE **
+       DO 10 Y=0,D
         DO 20 X=0,Y
             IF (IAND(X, Y-X) .EQ. 0) THEN
                 WRITE (*,'(A)', ADVANCE='NO') '@'
@@ -13,3 +19,4 @@ C23456789 ...
       PRINT *, ' '
 10    CONTINUE
         END
+C     *******************
