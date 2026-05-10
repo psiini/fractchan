@@ -20,11 +20,12 @@ C     TFN: Target write (file) location
             DOUBLE PRECISION PR, PI, TMP
             CHARACTER*6 TFN
 
-C           LOOP STATE STORAGE:
+C          LOOP STATE STORAGE:
             INTEGER I
 
 C           USER INPUT
 
+            WRITE (*,*) '!!WARNING!! THIS PROGRAM CREATES LARGE FILES!'
             WRITE (*,*) 'ENTER IMAGE WIDTH: '
             READ (*,*) W
 
@@ -38,7 +39,7 @@ C           USER INPUT
             READ (*,*) TFN
             
 C           MARK FILE FOR READING - DEVICE ID: 41
-            OPEN( UNIT=41 , FILE=TFN )
+            OPEN(UNIT=41,FILE=TFN )
 
             IF ( MAXITR .LT. 0 ) THEN
                   WRITE (*,*) 'NO MAX ITR DEFINED. DEFAULTING TO: 1000'
@@ -73,8 +74,7 @@ C           MARK FILE FOR READING - DEVICE ID: 41
       END IF
 
 20    CONTINUE
-
-      WRITE (*,*) ' '
+      WRITE (41,*) ' '
 10    CONTINUE
       END
 C     *******************
