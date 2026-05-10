@@ -5,7 +5,7 @@ C Version     : 1.0
 C Copyright   : (C) Sutinder S. Saini, All rights reserved.
 C Description : Displays the mandelbrot set in ASCII.
 C ============================================================================
-      PROGRAM SIERPASCII
+      PROGRAM MBROT
 C     M: Max iterations
 C     W: Picture width
 C     H: Picture height
