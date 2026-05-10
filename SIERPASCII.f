@@ -1,22 +1,30 @@
-C23456789 ...
-       PROGRAM SIERPASCII
-       INTEGER X, Y, N, D
-       
+C ============================================================================
+C Name        : SIERPASCII.f
+C Author      : Sutinder S. Saini
+C Version     : 1.0
+C Copyright   : (C) Sutinder S. Saini, All rights reserved.
+C Description : Write the sierpinski triangle to a file. (Max 5 char!)
+C ============================================================================
+      PROGRAM SIERPASCII
+      INTEGER X, Y, N, D
+      CHARACTER*5 NM
 C     ** USER INPUT **
       WRITE (*,*) 'ENTER DEPTH:'
       READ (*,*) D
 C           ***
-       
+      WRITE (*,*) 'ENTER FILE:'
+      READ (*,*) NM
+      OPEN(100, FILE=NM)
 C      ** PROGRAM CODE **
-       DO 10 Y=0,D
-        DO 20 X=0,Y
+      DO 10 Y=0,D
+      DO 20 X=0,Y
             IF (IAND(X, Y-X) .EQ. 0) THEN
-                WRITE (*,'(A)', ADVANCE='NO') '@'
+                  WRITE (100,'(A)', ADVANCE='NO') '@'
             ELSE
-                WRITE (*,'(A)', ADVANCE='NO') ' '
+                  WRITE (100,'(A)', ADVANCE='NO') ' '
             END IF
 20    CONTINUE
-      PRINT *, ' '
+      WRITE(100, *) ' '
 10    CONTINUE
-        END
+      END
 C     *******************
