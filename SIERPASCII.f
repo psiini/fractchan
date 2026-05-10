@@ -11,11 +11,11 @@ C ============================================================================
 C     ** USER INPUT **
       WRITE (*,*) 'ENTER DEPTH:'
       READ (*,*) D
-C           ***
       WRITE (*,*) 'ENTER FILE:'
       READ (*,*) NM
-      OPEN(100, FILE=NM)
+      
 C      ** PROGRAM CODE **
+      OPEN(100, FILE=NM)
       DO 10 Y=0,D
       DO 20 X=0,Y
             IF (IAND(X, Y-X) .EQ. 0) THEN
